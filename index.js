@@ -1,0 +1,26 @@
+const Box = (props) => {
+  //  Write your code here.
+  const { className, iconUrl, message } = props;
+  const containerClassName = `notification-container ${className}`;
+
+  return (
+    <div className={containerClassName}>
+      <img className="icon" src={iconUrl} />
+      <p className="message">{message}</p>
+    </div>
+  );
+};
+
+const element = (
+  //  Write your code here.
+  <div className="boxes-app-container">
+    <h1 className="heading">Boxes</h1>
+    <div className="boxes-container">
+      <Box text="Small" className="small-box" />
+      <Box text="Medium" className="medium-box" />
+      <Box text="Large" className="large-box" />
+    </div>
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById("root"));
